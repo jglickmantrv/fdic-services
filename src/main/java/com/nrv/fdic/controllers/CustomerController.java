@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200, https://main.d20vuuf91hyr1k.amplifyapp.com")
 public class CustomerController {
+    //todo: fix this
     //@EJB
     @Autowired
     private CustomerEjb customerEjb;
@@ -23,8 +24,8 @@ public class CustomerController {
         customerEjb.save(customer);
     }
 
-    @GetMapping
-    public void getCustomer() {
-        customerEjb.save(null);
+    @GetMapping()
+    public Customer getCustomer(@RequestParam("id") Long id) {
+        return customerEjb.findById(id);
     }
 }

@@ -25,4 +25,8 @@ public class Orders implements Serializable {
 	@Column(name="NAME")
 	private String name;
 
+	public String toString() {
+		return name;
+	}
+
 }

@@ -32,4 +32,10 @@ public class CustomersRepositoryTest {
         customer.setOrders(orders);
         customersRepository.save(customer);
     }
+
+    @Test
+    public void getTest() {
+        Customers customer = customersRepository.findById(1l).orElse(null);
+        assert (customer != null);
+    }
 }

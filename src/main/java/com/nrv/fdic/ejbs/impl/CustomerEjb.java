@@ -18,4 +18,13 @@ public class CustomerEjb implements CustomerLocal {
     public void save(Customer customer) {
         customersRepository.save(new Customers(customer));
     }
+
+    public Customer findById(Long id) {
+        Customers customerEntithy = customersRepository.findById(id).orElse(null);
+        Customer customer = null;
+        if (customerEntithy!=null) {
+            customer=customerEntithy.creatDto();
+        }
+        return customer;
+    }
 }

@@ -47,4 +47,23 @@ public class Customers implements Serializable {
 		this.setOrders(orders);
 	}
 
+	public Customer creatDto() {
+		Customer customer = new Customer();
+		customer.setCustomerId(this.id);
+		customer.setName(this.name);
+		customer.setMockOrders(new ArrayList<>());
+		for (Orders orderEntity : this.getOrders()) {
+			Order order = new Order();
+			order.setOrderId(orderEntity.getId());
+			order.setCustomerId(orderEntity.getId());
+			order.setName(orderEntity.getName());
+			customer.getMockOrders().add(order);
+		}
+		return customer;
+	}
+
+	public String toString() {
+		return name;
+	}
+
 }
