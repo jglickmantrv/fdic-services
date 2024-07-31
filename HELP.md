@@ -32,3 +32,7 @@ Admin console listening on http://127.0.0.1:9990
 
 good article
 https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/ejb.html
+
+either create a certifiate or terminate ssl
+see if amplifhy allows ssl termination
+copy cergt fromamplify to back end

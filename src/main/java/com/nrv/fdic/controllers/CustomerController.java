@@ -26,6 +26,7 @@ public class CustomerController {
 
     @GetMapping()
     public Customer getCustomer(@RequestParam("id") Long id) {
+        System.out.println("in getCustomer()");
         return customerEjb.findById(id);
     }
 }
